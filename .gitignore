@@ -1,0 +1,6 @@
+/dataset/
+/model/
+/.idea/
+/__pycache__/
+/logs/
+/test/
