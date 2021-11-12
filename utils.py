@@ -19,7 +19,7 @@ class Logger(object):
         self.writer = tf.summary.create_file_writer(log_dir)
 
     def scalar_summary(self, tag, value, step):
-        tf.summary.scalar(tag, value, step=step)
+        tf.summary.scalar(tag, value.cpu(), step=step)
         self.writer.flush()
         # summary = tf.Summary(value=[tf.summary.Value(tag=tag, simple_value=value)])
         # self.writer.add_summary(summary, step)
