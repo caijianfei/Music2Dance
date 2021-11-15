@@ -1,4 +1,4 @@
-# Copyright (c) 2020, NVIDIA Corporation. All rights reserved.
+# Copyright (c) 2019, NVIDIA Corporation. All rights reserved.
 #
 # This work is made available
 # under the Nvidia Source Code License (1-way Commercial).
@@ -36,10 +36,10 @@ class Trainer_Comp(object):
         self.danceAud_dis = danceAud_dis
         self.aud_enc = aud_enc
         self.audstyle_enc = audstyle_enc
-        self.trainst = args.train
+        self.train = args.train
         self.args = args
 
-        if args.train:
+        if self.train:
             self.zdance_dis = zdance_dis
             self.dance_reg = dance_reg
 
@@ -328,7 +328,7 @@ class Trainer_Comp(object):
         return
 
     def cuda(self):
-        if self.trainst:
+        if self.train:
             self.dance_reg.cuda()
             self.danceAud_dis.cuda()
             self.zdance_dis.cuda()
