@@ -36,7 +36,7 @@ class Trainer_Comp(object):
         self.danceAud_dis = danceAud_dis
         self.aud_enc = aud_enc
         self.audstyle_enc = audstyle_enc
-        self.train = args.train
+        # self.train = args.train
         self.args = args
 
         if self.train:
@@ -328,7 +328,7 @@ class Trainer_Comp(object):
         return
 
     def cuda(self):
-        if self.train:
+        if self.args.train:
             self.dance_reg.cuda()
             self.danceAud_dis.cuda()
             self.zdance_dis.cuda()
